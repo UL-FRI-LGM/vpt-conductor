@@ -1,0 +1,60 @@
+// #package uispecs
+
+// #section AttribLoadDialog
+
+{
+  "type": "panel",
+  "children": [
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "field",
+          "label": "Attributes file:",
+          "children": [
+            {
+              "type": "file-chooser",
+              "bind": "attribFile"
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "label": "Layout file:",
+          "children": [
+            {
+              "type": "file-chooser",
+              "bind": "layoutFile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "bind": "loadButtonAndProgress",
+      "visible": false,
+      "children": [
+        {
+          "type": "field",
+          "children": [
+            {
+              "type": "button",
+              "bind": "loadButton",
+              "label": "Load"
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "children": [
+            {
+              "type": "progress-bar",
+              "bind": "loadProgress"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

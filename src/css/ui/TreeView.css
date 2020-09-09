@@ -1,0 +1,11 @@
+/* #package css/main */
+
+ul, #TreeView {
+    list-style-type: square;
+}
+
+#TreeView {
+    margin: 0;
+    padding: 0;
+}
+

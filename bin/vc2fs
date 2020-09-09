@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const { vec3, mat3, quat } = require('./gl-matrix-min.js');
+
+const fname = process.argv[2];
+const input = fs.readFileSync(fname, 'utf8');
+const camera = JSON.parse(input);
+
+const position = vec3.clone(camera.position);
+const rotation = quat.clone(camera.rotation);
+
+const rotationMatrix = mat3.fromQuat(mat3.create(), rotation);
+mat3.transpose(rotationMatrix, rotationMatrix);
+const right   = vec3.fromValues(...rotationMatrix.slice(0, 3));
+const up      = vec3.fromValues(...rotationMatrix.slice(3, 6));
+const forward = vec3.fromValues(...rotationMatrix.slice(6, 9));
+vec3.negate(forward, forward);
+
+const focalPoint = vec3.scaleAndAdd(vec3.create(), position, forward, camera.focus);
+const viewUp = up;
+
+console.log(`
+<settings>
+    <camera
+        positionX="${position[0]}"
+        positionY="${position[1]}"
+        positionZ="${position[2]}"
+        positionW="1"
+        focalPointX="${focalPoint[0]}"
+        focalPointY="${focalPoint[1]}"
+        focalPointZ="${focalPoint[2]}"
+        focalPointW="1"
+        viewUpX="${viewUp[0]}"
+        viewUpY="${viewUp[1]}"
+        viewUpZ="${viewUp[2]}"
+        viewUpW="1"
+        />
+</settings>
+`.trim());

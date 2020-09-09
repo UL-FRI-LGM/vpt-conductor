@@ -1,0 +1,70 @@
+// #package uispecs
+
+// #section VisibilityGroup
+
+{
+  "type": "panel",
+  "children": [
+    {
+      "type": "panel",
+      "bind": "controlPanel"
+    },
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "field",
+          "label": "Property:",
+          "children": [
+            {
+              "type": "dropdown",
+              "bind": "attribute"
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "label": "Range:",
+          "children": [
+            {
+              "type": "vector2",
+              "bind": "range"
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "label": "Visibility:",
+          "children": [
+            {
+              "type": "slider-multi-track",
+              "bind": "visibility",
+              "value": 100,
+              "value2": 0,
+              "value3": 0,
+              "min": 0,
+              "max": 100,
+              "step": 1
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "label": "Color:",
+          "children": [
+            {
+              "type": "color-chooser",
+              "bind": "color",
+              "value": "#ff0000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "spacer",
+      "bind": "spacer",
+      "height": "1px"
+    }
+  ]
+}

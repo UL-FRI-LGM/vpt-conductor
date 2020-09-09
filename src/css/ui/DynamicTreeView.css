@@ -1,0 +1,176 @@
+/* #package css/main */
+
+#property-tree-container {
+    width: 100%;
+    padding: 5px;
+}
+
+#property-tree-header {
+    height: 24px;
+    padding: 5px;
+}
+
+#property-tree-header select {
+    width: 100px;
+    height: 24px;
+    float: left;
+}
+
+#property-tree-header .button {
+    float: left;
+    width: auto;    
+    margin-left: 2px;
+}
+
+#property-tree-header .button > input {
+    padding: 4px;
+}
+
+.property-tree-node {
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.property-header {
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+    height: 30px;
+    background-color: lightgray;
+}
+
+.property-header:hover {
+    border-top: 1px solid #1a73e8;
+    border-right: 1px solid #1a73e8;
+    border-left: 1px solid #1a73e8;
+    cursor: move;
+}
+
+.bottom-border {
+    border-bottom: 1px solid gray;
+}
+
+.bottom-border:hover {
+    border-bottom: 1px solid #1a73e8;
+}
+
+.property-name {
+    float: left;
+    line-height: 26px;
+    vertical-align: middle;
+    margin: 2px;
+    font-weight: bold;
+}
+
+.property-collapse-button {
+    width: 15px;
+    height: 15px;
+    float: right;
+}
+
+.property-delete-button {
+    width: 15px;
+    height: 15px;
+    float: right;
+}
+
+.property-unpin-button {
+    width: 15px;
+    height: 15px;
+    float: right;
+}
+
+.property-range, .property-enum {
+    clear: both;
+    height: 20px;
+    padding: 2px;
+    margin-bottom: 2px;
+}
+
+.property-enum {
+    height: auto;
+}
+
+.property-range-label, .property-enum-label {
+    width: 30%;
+    float: left;    
+    font-style: italic;
+}
+
+.property-range input {
+    width: 25%;
+    float: left;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    padding-left: 3px;
+    background-color: white;
+    border: 1px solid #aaaaaa;
+    color: black;
+    box-sizing: border-box;
+    display: block;
+}
+
+.property-range-delete-button {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    float: right;
+}
+
+.property-range-add-button {
+    width: 15px;
+    height: 15px;
+    float: right;
+}
+
+.property-values-wrapper {
+    transition: height 0.45s ease-out;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+.collapsed {
+    display: none;
+}
+
+.property-subnodes-wrapper {
+    margin-left: 20px;
+    clear: both;
+}
+
+.add-button {
+    background: url("../images/icons/addition-sign.svg") no-repeat;
+    background-size: 10px;
+    background-position: 2px 50%;
+    cursor: pointer;
+}
+
+.delete-button {
+    background: url("../images/icons/cross.svg") no-repeat;
+    background-size: 8px;
+    background-position: 2px 50%;
+    cursor: pointer;
+}
+
+.unpin-button {
+    background: url("../images/icons/counterclockwise-circular-arrow.svg") no-repeat;
+    background-size: 8px;
+    background-position: 2px 50%;
+    cursor: pointer;
+}
+
+.right-button {
+    background: url("../images/icons/arrow-angle-pointing-to-right.svg") no-repeat;
+    background-size: 10px;
+    background-position: 2px 50%;
+    cursor: pointer;
+}
+
+.down-button {
+    background: url("../images/icons/arrow-angle-pointing-to-bottom.svg") no-repeat;
+    background-size: 10px;
+    background-position: 2px 50%;
+    cursor: pointer;
+}

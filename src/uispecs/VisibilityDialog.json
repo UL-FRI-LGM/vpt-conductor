@@ -1,0 +1,92 @@
+// #package uispecs
+
+// #section VisibilityDialog
+
+{
+  "type": "panel",
+  "children": [
+    {
+      "type": "accordion",
+      "label": "Sparsification Strategy Settings",
+      "children": [
+        {
+          "type": "field",
+          "label": "Removal Approach:",
+          "children": [
+            {
+              "type": "dropdown",
+              "bind": "removalSelect",
+              "options": [
+                {
+                  "value": "depth",
+                  "label": "Depth Based",
+                  "selected": true
+                },
+                {
+                  "value": "CPF",
+                  "label": "Context-Preserved"
+                },
+                {
+                  "value": "random",
+                  "label": "Random"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "label": "Auto-update:",
+          "children": [
+            {
+              "type": "checkbox",
+              "bind": "removalAutoUpdate",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "label": "ks:",
+          "children": [
+            {
+              "type": "spinner",
+              "bind": "ks",
+              "value": 0.4,
+              "min": 0,
+              "step": 0.1
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "label": "kt:",
+          "children": [
+            {
+              "type": "spinner",
+              "bind": "kt",
+              "value": 6.0,
+              "min": 0,
+              "step": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "label": "List View",
+      "children": [
+            {
+              "type": "panel",
+              "bind": "group_container"
+            },
+            {
+              "type": "button",
+              "bind": "addGroupButton",
+              "label": "Add group"
+            }
+          ]
+    }
+  ]
+}

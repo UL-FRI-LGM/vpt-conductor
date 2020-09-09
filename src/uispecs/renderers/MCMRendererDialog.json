@@ -1,0 +1,151 @@
+// #package uispecs
+
+// #section MCMRendererDialog
+
+{
+  "type": "panel",
+  "children": [
+    {
+      "type": "field",
+      "label": "Extinction:",
+      "children": [
+        {
+          "type": "spinner",
+          "bind": "extinction",
+          "logarithmic": true,
+          "value": 500,
+          "min": 0,
+          "step": 0.1
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "label": "Scattering albedo:",
+      "children": [
+        {
+          "type": "slider",
+          "bind": "albedo",
+          "value": 1,
+          "min": 0,
+          "max": 1,
+          "step": 0.1
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "label": "Scattering bias:",
+      "children": [
+        {
+          "type": "slider",
+          "bind": "bias",
+          "value": 0,
+          "min": -1,
+          "max": 1,
+          "step": 0.2
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "label": "Majorant ratio:",
+      "children": [
+        {
+          "type": "slider",
+          "bind": "ratio",
+          "value": 1,
+          "min": 0,
+          "max": 1,
+          "step": 0.1
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "label": "Max bounces:",
+      "children": [
+        {
+          "type": "spinner",
+          "bind": "bounces",
+          "value": 128,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "label": "Steps:",
+      "children": [
+        {
+          "type": "spinner",
+          "bind": "steps",
+          "value": 128,
+          "min": 1
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "label": "Color bias:",
+      "children": [
+        {
+          "type": "slider",
+          "bind": "colorBias",
+          "value": 0,
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "label": "Alpha bias:",
+      "children": [
+        {
+          "type": "slider",
+          "bind": "alphaBias",
+          "value": 0,
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "label": "Alpha transfer:",
+      "children": [
+        {
+          "type": "slider",
+          "bind": "alphaTransfer",
+          "value": 0,
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "type": "field",
+      "label": "Cut depth:",
+      "children": [
+        {
+          "type": "slider",
+          "bind": "cutDepth",
+          "value": 0,
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "label": "Transfer function",
+      "children": [
+        {
+          "type": "panel",
+          "bind": "tf_container"
+        }
+      ]
+    }
+  ]
+}

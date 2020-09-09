@@ -1,0 +1,129 @@
+// #package uispecs
+
+// #section MainDialog
+
+{
+  "type": "sidebar",
+  "bind": "sidebar",
+  "children": [
+    {
+      "type": "tabs",
+      "index": 3,
+      "children": {
+        "Data": {
+          "type": "panel",
+          "children": [
+            {
+              "type": "accordion",
+              "bind": "idvolumeLoad_container",
+              "label": "ID Volume"
+            },
+            {
+              "type": "accordion",
+              "bind": "rawvolumeLoad_container",
+              "label": "Raw Data Volume"
+            },
+            {
+              "type": "accordion",
+              "bind": "attribLoad_container",
+              "label": "Attributes"
+            },
+            {
+              "type": "accordion",
+              "bind": "envmapLoad_container",
+              "label": "Environment"
+            }
+          ]
+        },
+        "Settings": {
+          "type": "panel",
+          "children": [
+            {
+              "type": "accordion",
+              "label": "Renderer",
+              "children": [
+                {
+                  "type": "field",
+                  "label": "Renderer:",
+                  "children": [
+                    {
+                      "type": "dropdown",
+                      "bind": "rendererSelect",
+                      "options": [
+                        {
+                          "value": "mcm",
+                          "label": "Multiple scattering",
+                          "selected": true
+                        },
+                        {
+                          "value": "dos",
+                          "label": "Directional occlusion shading"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "bind": "rendererSettings_container"
+                }
+              ]
+            },
+            {
+              "type": "accordion",
+              "label": "Tone mapper",
+              "children": [
+                {
+                  "type": "field",
+                  "label": "Tone mapper:",
+                  "children": [
+                    {
+                      "type": "dropdown",
+                      "bind": "toneMapperSelect",
+                      "options": [
+                        {
+                          "value": "range",
+                          "label": "Range"
+                        },
+                        {
+                          "value": "reinhard",
+                          "label": "Reinhard"
+                        },
+                        {
+                          "value": "artistic",
+                          "label": "Artistic",
+                          "selected": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "bind": "toneMapperSettings_container"
+                }
+              ]
+            },
+            {
+              "type": "accordion",
+              "bind": "renderingContextSettings_container",
+              "label": "Context"
+            }
+          ]
+        },
+        "ListView": {
+          "type": "panel",
+          "bind": "visibility_container"
+        },
+        "TreeView": {
+          "type": "panel",
+          "bind": "TreeViewContainer"
+        },
+        "About": {
+          "type": "panel",
+          "bind": "about"
+        }
+      }
+    }
+  ]
+}

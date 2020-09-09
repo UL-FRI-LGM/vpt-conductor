@@ -1,0 +1,69 @@
+/* #package css/main */
+
+.camera-controls-wrapper {
+    width: 40px;
+    height: 285px;
+    background-color: transparent;
+    margin: 4px;
+    position: absolute;
+    right: 0px;
+    bottom: 18px;
+    background-color: white;
+}
+
+.camera-button {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid gray;
+    background-color: white;    
+    cursor: pointer;
+}
+
+.camera-button.camera-zoom-in {      
+    background: url("../images/icons/zoom-in.svg") no-repeat;        
+    background-size: 23px;
+    background-position: 2px 50%;     
+}
+
+.camera-button.camera-zoom-out {
+    background: url("../images/icons/zoom-out.svg") no-repeat;        
+    background-size: 23px;
+    background-position: 2px 50%;     
+}
+
+.camera-button.camera-x-possitive {
+    background: url("../images/icons/xpos.svg") no-repeat;        
+    background-size: 23px;
+    background-position: 2px 50%;     
+}
+
+.camera-button.camera-x-negative {
+    background: url("../images/icons/xneg.svg") no-repeat;        
+    background-size: 23px;
+    background-position: 2px 50%;     
+}
+
+.camera-button.camera-y-possitive {
+    background: url("../images/icons/ypos.svg") no-repeat;        
+    background-size: 23px;
+    background-position: 2px 50%;     
+}
+
+.camera-button.camera-y-negative {
+    background: url("../images/icons/yneg.svg") no-repeat;        
+    background-size: 23px;
+    background-position: 2px 50%;     
+}
+
+.camera-button.camera-z-possitive {
+    background: url("../images/icons/zpos.svg") no-repeat;        
+    background-size: 23px;
+    background-position: 2px 50%;     
+}
+
+.camera-button.camera-z-negative {
+    background: url("../images/icons/zneg.svg") no-repeat;        
+    background-size: 23px;
+    background-position: 2px 50%;     
+}

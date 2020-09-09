@@ -1,0 +1,8 @@
+node_modules
+package-lock.json
+build
+settings
+data-generator/debug/
+data-generator/.vs/
+data-generator/release/
+data-generator/output/
