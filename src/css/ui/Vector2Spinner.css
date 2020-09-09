@@ -1,0 +1,9 @@
+/* #package css/main */
+
+.vector2 {
+    display: flex;
+}
+
+.vector2-component {
+    flex: 1;
+}

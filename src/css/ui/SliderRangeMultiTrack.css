@@ -1,0 +1,68 @@
+/* #package css/main */
+
+.slider-range-multi-track {
+    --height         : 18px;
+    --button-size    : 16px;
+    --track-height   : 3px;    
+    --track-height2   : 4px;    
+    --enabled-color  : #2196f3;
+    --disabled-color : #cccccc;
+    --enabled-color2  : #aaaaaa;
+    --disabled-color2 : #cccccc;
+    --enabled-color3  : #f39621;
+    --disabled-color3 : #cccccc;
+}
+
+.slider-range-multi-track {
+    width: 100%;
+    height: var(--height);
+
+    cursor: pointer;
+}
+
+.slider-range-multi-track .container {
+    position: relative;
+    width: calc(100% - var(--button-size));
+    height: 100%;
+    margin: auto;
+}
+
+.slider-range-multi-track .track {
+    position: absolute;
+    top: calc((var(--height) - var(--track-height)) / 2);
+    width: 100%;
+    height: var(--track-height);
+
+    background-color: var(--enabled-color);
+}
+
+.slider-range-multi-track .track2 {
+    position: absolute;
+    top: calc(((var(--height) - var(--track-height)) / 2) + var(--track-height2));
+    width: 100%;
+    height: var(--track-height);
+
+    background-color: var(--enabled-color2);
+}
+
+.slider-range-multi-track .track3 {
+    position: absolute;
+    top: calc(((var(--height) - var(--track-height)) / 2) - var(--track-height2));
+    width: 100%;
+    height: var(--track-height);
+
+    background-color: var(--enabled-color3);
+}
+
+.slider-range-multi-track .button {
+    position: absolute;
+    width: var(--button-size);
+    height: var(--button-size);
+    left: calc(0% - var(--button-size) / 2);
+    top: calc((var(--height) - var(--button-size)) / 2);
+
+    border: 2px solid var(--enabled-color);
+    background-color: white;
+    border-radius: 50%;
+    box-sizing: border-box;
+}

@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const { vec3, mat3, quat } = require('./gl-matrix-min.js');
+
+const fname = process.argv[2];
+const input = fs.readFileSync(fname, 'utf8');
+
+const re = /(\w+)\s*=\s*"(.*)"/g;
+const matches = Object.fromEntries(
+    [...input.matchAll(re)]
+    .map(([, key, value]) => [key, Number(value)])
+);
+
+const position = vec3.fromValues(matches.positionX, matches.positionY, matches.positionZ);
+const focalPoint = vec3.fromValues(matches.focalPointX, matches.focalPointY, matches.focalPointZ);
+const viewUp = vec3.fromValues(matches.viewUpX, matches.viewUpY, matches.viewUpZ);
+
+const forward = vec3.sub(vec3.create(), focalPoint, position);
+const focus = vec3.len(forward);
+vec3.normalize(forward, forward);
+const right = vec3.cross(vec3.create(), forward, viewUp);
+vec3.normalize(right, right);
+const up = vec3.cross(vec3.create(), right, forward);
+vec3.normalize(up, up);
+
+vec3.negate(forward, forward);
+const rotationMatrix = mat3.fromValues(...right, ...up, ...forward);
+mat3.transpose(rotationMatrix, rotationMatrix);
+const rotation = quat.fromMat3(quat.create(), rotationMatrix);
+
+quat.normalize(rotation, rotation);
+
+console.log(JSON.stringify({
+    near: 0.1,
+    far: 5,
+    zoomFactor: 0.001,
+    focus,
+    position: [...position, 1],
+    rotation: [...rotation],
+}));

@@ -1,0 +1,114 @@
+/* #package css/main */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+    --locked-color: #6d6a6a;
+    --unlocked-color: #2196f3;
+    --empty-color: #a14e4e;
+}
+.treeLock {
+  margin-bottom: 10px;
+  margin-right: 8px;
+  margin-left: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1px;
+}
+/* :::::::::::::: Required CSS */
+/* Locked */
+.lock {
+  width: 19px;
+  height: 15px;
+  border: 2px solid var(--locked-color);
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.lock:after {
+  content: "";
+  display: block;
+  background: var(--locked-color);
+  width: 2px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -4px 0 0 -2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.lock:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 5px;
+  bottom: 100%;
+  position: absolute;
+  left: 60%;
+  margin-left: -10px;
+  border: 3px solid var(--locked-color);
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom: 0;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.unlocked:before {
+  bottom: 110%;
+  left: 31%;
+  margin-left: -9px;
+  transform: translate(-10deg);
+}
+.unlocked,
+.unlocked:before {
+  border-color: var(--unlocked-color);
+}
+.unlocked:after {
+  background: var(--unlocked-color);
+}
+
+/* Empty */
+.empty {
+  width: 19px;
+  height: 15px;
+  border: 2px solid var(--empty-color);
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.empty:after {
+  content: "";
+  display: block;
+  background: var(--empty-color);
+  width: 2px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -3.5px 0 0 -2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.empty:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 5px;
+  bottom: 100%;
+  position: absolute;
+  left: 60%;
+  margin-left: -10px;
+  border: 3px solid var(--empty-color);
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom: 0;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
